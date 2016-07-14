@@ -17,8 +17,8 @@ exporter.downloadCsv(people);
 
 ## Install
 
-Option 1: Download https://raw.githubusercontent.com/edamtoft/JsCsvExport/master/dist/Export.min.js
-Option 2: Install via $ npm install csvexport and add a script tag for "node_modules/csvexport/dist/Export.min.js"
+* Option 1: Download https://raw.githubusercontent.com/edamtoft/JsCsvExport/master/dist/Export.min.js
+* Option 2: Install via $ npm install csvexport and add a script tag for "node_modules/csvexport/dist/Export.min.js"
 
 ## Configuration
 Export.create takes an options object which supports the following:
