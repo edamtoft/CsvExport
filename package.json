@@ -18,5 +18,14 @@
     "gulp-babel": "^6.1.2",
     "gulp-rename": "^1.2.2",
     "gulp-uglify": "^1.5.4"
-  }
+  },
+  "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/edamtoft/JsCsvExport.git"
+  },
+  "bugs": {
+    "url": "https://github.com/edamtoft/JsCsvExport/issues"
+  },
+  "homepage": "https://github.com/edamtoft/JsCsvExport#readme"
 }

@@ -1,8 +1,9 @@
 (() => {
   
 class CsvWriter {
-  constructor(delimiter = ",") {
+  constructor(delimiter = ",", contentType = "text/csv") {
     this._delimiter = delimiter;
+    this._contentType = contentType;
     this._rows = [[]];
   }
 
@@ -20,7 +21,7 @@ class CsvWriter {
 
   toString() { return this._rows.map(row => row.join(this._delimiter)).reduce((content,row) => content + "\r\n" + row); }
 
-  toBlob(contentType = "text/csv") { return new Blob([this.toString()], { type: contentType }); }
+  toBlob() { return new Blob([this.toString()], { type: this._contentType }); }
 }
 
 
@@ -32,10 +33,11 @@ class Export {
   
   _createCsvBlob(data) {
     let delimeter = this._options.delimeter || ",";
+    let contentType = this._options.contentType || "text/csv";
     let headerNames = this._options.headers || {};
     let formatters = this._options.formatters || {};
     let getFormater = header => formatters[header] || (v => v);
-    let writer = new CsvWriter(delimeter);
+    let writer = new CsvWriter(delimeter,contentType);
     let headers = Object.getOwnPropertyNames(data[0])
       .filter(header => headerNames[header] !== null);
     headers.forEach(header => writer.writeValue(headerNames[header]||header));
@@ -44,7 +46,7 @@ class Export {
       headers.forEach(header => writer.writeValue(getFormater(header)(row[header])));
       writer.writeLine();
     });
-    return writer.toBlob("text/csv");
+    return writer.toBlob();
   }
 
   _download(blob, filename)
