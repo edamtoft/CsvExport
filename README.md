@@ -1,4 +1,4 @@
-# JsCsvExport
+# CsvExport
 Export CSV files from javascript objects in the browser
 
 ## Usage
@@ -17,7 +17,7 @@ exporter.downloadCsv(people);
 
 ## Demo
 
-A live demo is available at https://edamtoft.github.io/JsCsvExport/
+A live demo is available at https://edamtoft.github.io/CsvExport/
 
 ## Install
 
