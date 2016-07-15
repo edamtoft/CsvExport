@@ -36,12 +36,14 @@ class Export {
     let contentType = this._options.contentType || "text/csv";
     let headerNames = this._options.headers || {};
     let formatters = this._options.formatters || {};
+    let includeHeaders = this._options.includeHeaders;
     let getFormater = header => formatters[header] || (v => v);
     let writer = new CsvWriter(delimeter,contentType);
-    let headers = Object.getOwnPropertyNames(data[0])
-      .filter(header => headerNames[header] !== null);
-    headers.forEach(header => writer.writeValue(headerNames[header]||header));
-    writer.writeLine();
+    let headers = this._options.columns || Object.getOwnPropertyNames(data[0]);
+    if (includeHeaders === undefined || includeHeaders) {
+      headers.forEach(header => writer.writeValue(headerNames[header]||header));
+      writer.writeLine();
+    }
     data.forEach(row => {
       headers.forEach(header => writer.writeValue(getFormater(header)(row[header])));
       writer.writeLine();
