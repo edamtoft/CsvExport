@@ -31,7 +31,7 @@ Export.create takes an options object which supports the following:
 * contentType: specity a custom contentType (string; optional; default = "text/csv")
 * filename: a name for the file to download (string; options; default = "export.csv")
 * includeHeaders: choose to include or exclude the headers as the first row (boolean; optional; default = true) 
-* columns: choose which columns to include. If not specified, will use the properties of the first data item (object; optional)
+* columns: choose which columns to include. If not specified, will use the properties of the first data item (array; optional)
 * headers: object which maps property names to headers (object; optional)
 * formatters: object which maps property names to a function which will return the formatted value (object; optional)
 
