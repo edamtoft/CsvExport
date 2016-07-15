@@ -53,6 +53,11 @@ class Export {
 
   _download(blob, filename)
   {
+    if (navigator.msSaveBlob) {
+      // Internet Explorer throws "Access is Denied" with ObjectUrls
+      navigator.msSaveBlob(blob,filename);
+      return;
+    }
     let link = document.createElement("A");
     let url = URL.createObjectURL(blob);
     link.href = url;
