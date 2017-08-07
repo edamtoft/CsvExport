@@ -1,6 +1,6 @@
 {
   "name": "csvexport",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Export CSV files from javascript objects in the browser",
   "main": "source/Export.js",
   "scripts": {
