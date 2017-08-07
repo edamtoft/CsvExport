@@ -34,7 +34,7 @@ Export.create takes an options object which supports the following:
 * columns: choose which columns to include. If not specified, will use the properties of the first data item (array; optional)
 * headers: object which maps property names to headers (object; optional)
 * formatters: object which maps property names to a function which will return the formatted value (object; optional)
-* byteOrderMark: a string for set in the beginning of the file to help for opening utf-8 csv in excel
+* byteOrderMark: A unicode character to be placed at the beginning of the file to help open utf-8 csv in excel (string; optional)
 ### Examples
 ```javascript
 let exporter = Export.create({
