@@ -76,7 +76,12 @@ class Export {
   }
   
   downloadCsv(data) {
-  	try {
+    if(!data || !data.length)
+    {
+      alert('Unable to create export: no data provided. File would be empty.');
+      return;
+    }
+    try {
       console.info("Generating CSV download");
       let blob = this._createCsvBlob(data);
       let filename = this._options.filename || "export.csv";
