@@ -14,7 +14,7 @@ class CsvWriter {
 
   writeValue(value) {
     let stringValue = value === undefined ? "" : String(value);
-    let needsQuote = stringValue.indexOf(this._delimiter) !== -1 || /"\r\n/.test(stringValue);
+    let needsQuote = stringValue.indexOf(this._delimiter) !== -1 || /\r\n/.test(stringValue);
     this._currentRow.push(needsQuote ? this._quote(stringValue) : stringValue);
   }
 
