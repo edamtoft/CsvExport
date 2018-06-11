@@ -1,10 +1,13 @@
 {
   "name": "csvexport",
-  "version": "1.0.5",
+  "version": "1.1.0",
   "description": "Export CSV files from javascript objects in the browser",
-  "main": "source/Export.js",
+  "main": "dist/CsvExport.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build-dev": "webpack --mode development",
+    "build": "webpack --mode production",
+    "watch": "webpack --watch --mode development",
+    "prepublishOnly": "webpack --mode production"
   },
   "keywords": [
     "CSV",
@@ -13,19 +16,20 @@
   "author": "Eric Damtoft",
   "license": "MIT",
   "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.4",
+    "babel-preset-env": "^1.7.0",
     "babel-preset-es2015": "^6.9.0",
-    "gulp": "^3.9.1",
-    "gulp-babel": "^6.1.2",
-    "gulp-rename": "^1.2.2",
-    "gulp-uglify": "^1.5.4"
+    "webpack": "^4.11.1",
+    "webpack-cli": "^2.1.2"
   },
   "dependencies": {},
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/edamtoft/JsCsvExport.git"
+    "url": "git+https://github.com/edamtoft/CsvExport.git"
   },
   "bugs": {
-    "url": "https://github.com/edamtoft/JsCsvExport/issues"
+    "url": "https://github.com/edamtoft/CsvExport/issues"
   },
-  "homepage": "https://github.com/edamtoft/JsCsvExport#readme"
+  "homepage": "https://github.com/edamtoft/CsvExport"
 }
